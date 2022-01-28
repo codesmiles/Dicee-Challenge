@@ -12,10 +12,13 @@ const img2 = document.querySelector(".img2");
 const remark = document.querySelector(".remark");
 const players = document.querySelectorAll(".player");
 
-
-players.forEach((player,index) => {player.innerHTML=prompt(`Enter your name Player ${index + 1}`)});
+players.forEach((player, index) => {
+    player.innerHTML = prompt(`Enter your name Player ${index + 1}`);
+    if (player.innerHTML === "") { 
+        player.innerHTML = `Player ${index + 1}`;
+    }
+});
 // console.log(players)
-
 
 refresh.addEventListener("click", () => {
   let random1 = Math.floor(Math.random() * arrOfImg.length);
@@ -28,5 +31,4 @@ refresh.addEventListener("click", () => {
     : random1 > random2
     ? (remark.textContent = "Player 1 Wins")
     : (remark.textContent = "Player 2 Wins");
-    
 });

@@ -27,6 +27,12 @@ h1 {
   -o-user-select: none;
 }
 
+h3{
+  font-size: 2rem;
+    color: #eeeeee;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+}
 h1:hover {
   color: #7e6f3c;
 }
@@ -35,6 +41,11 @@ p {
   font-size: 2rem;
   color: #4ecca3;
   font-family: "Indie Flower", cursive;
+}
+.remark{
+    font-size: 2rem;
+    color: #eeeeee;
+    text-align: center;
 }
 
 img {

@@ -1,3 +1,4 @@
+// Collecting data
 let arrOfImg = [
   "images/dice1.png",
   "images/dice2.png",
@@ -12,14 +13,17 @@ const img2 = document.querySelector(".img2");
 const remark = document.querySelector(".remark");
 const players = document.querySelectorAll(".player");
 
+// Accepting names of players
 players.forEach((player, index) => {
-    player.innerHTML = prompt(`Enter your name Player ${index + 1}`);
-    if (player.innerHTML === "") { 
-        player.innerHTML = `Player ${index + 1}`;
-    }
+  player.innerHTML = prompt(`Enter your name Player ${index + 1}`);
+  if (player.innerHTML === "") {
+    player.innerHTML = `Player ${index + 1}`;
+  }
 });
-// console.log(players)
+// Destructuring the names of players accepted
+var [player1, player2] = players;
 
+// Click event for dice
 refresh.addEventListener("click", () => {
   let random1 = Math.floor(Math.random() * arrOfImg.length);
   let random2 = Math.floor(Math.random() * arrOfImg.length);
@@ -29,6 +33,6 @@ refresh.addEventListener("click", () => {
   random1 === random2
     ? (remark.textContent = "Draw")
     : random1 > random2
-    ? (remark.textContent = "Player 1 Wins")
-    : (remark.textContent = "Player 2 Wins");
+    ? (remark.textContent = `${player1.innerHTML} Wins`)
+    : (remark.textContent = `${player2.innerHTML} Wins`);
 });

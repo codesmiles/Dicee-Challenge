@@ -1,4 +1,5 @@
 # Note
+
 In case you want to prevent highlight of some text on the page, you can use the following syntax;
 
 ```sh
